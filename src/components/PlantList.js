@@ -1,15 +1,21 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({plants}) {
+function PlantList({plantDbInfo, onUpdatePlant, onDeletePlant}) {
 
- const renderPlantCard = plants.map(plantDbInfo => <PlantCard
-  key={plantDbInfo.id}
-  plantDbInfo={plantDbInfo}
-  )
+  function renderPlants() {plantDbInfo.map((plantDbInfo) => {
+      return (
+        <PlantCard
+          key={plantDbInfo.id}
+          plantDbInfo={plantDbInfo}
+          onDeletePlant={onDeletePlant}
+          onUpdatePlant={onUpdatePlant}
+        />
+      );
+    })}
 
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{renderPlants}</ul>
   );
 }
 

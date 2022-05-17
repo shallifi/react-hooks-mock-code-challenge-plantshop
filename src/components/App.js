@@ -4,15 +4,7 @@ import PlantPage from "./PlantPage";
 import { useState } from "react";
 
 function App() {
-  const [plants, setPlants] = useState([])
 
-  function fetchData(){
-    fetch(`http://localhost:6001/plants`)
-      .then((resp) => resp.json())
-      .then (date => console.log(setPlants)) 
-    }
-    
-  
 
   return (
     <div className="app">
